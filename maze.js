@@ -1,7 +1,13 @@
 window.onload = function() {
-    document.getElementById("boundary1").onmouseover = overBoundary;
+    let boundaries = document.querySelectorAll("div#maze div.boundary");
+    for (var i = 0; i < boundaries.length; i++) {
+        boundaries[i].onmouseover = overBoundary;
+    }
 };
 
 function overBoundary() {
-    document.getElementById("boundary1").style.backgroundColor = "#ff8888";
+    let boundaries = document.querySelectorAll("div#maze div.boundary");
+    for (var i = 0; i < boundaries.length; i++) {
+        boundaries[i].classList.add("youlose");
+    }
 }
