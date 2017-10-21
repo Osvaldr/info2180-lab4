@@ -27,8 +27,8 @@ function startClick() {
 
 function overEnd() {
     if(loser) {
-        alert("Sorry, you lost. :[");
+        document.getElementById("status").innerHTML = "Sorry, you lost. :[";
     } else {
-        alert("You win! :]");
+        document.getElementById("status").innerHTML = "You win! :]";
     }
 }
