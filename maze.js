@@ -1,6 +1,7 @@
 var loser = false;  // whether the user has hit a wall
 
 window.onload = function() {
+    document.getElementById("maze").onmouseleave = cheatCheck;
     document.getElementById("start").onclick = startClick;
     document.getElementById("end").onmouseover = overEnd;
     let boundaries = document.querySelectorAll("div#maze div.boundary");
@@ -22,6 +23,14 @@ function startClick() {
     let boundaries = document.querySelectorAll("div#maze div.boundary");
     for (var i = 0; i < boundaries.length; i++) {
         boundaries[i].classList.remove("youlose");
+    }
+}
+
+function cheatCheck() {
+    loser = true;
+    let boundaries = document.querySelectorAll("div#maze div.boundary");
+    for (var i = 0; i < boundaries.length; i++) {
+        boundaries[i].classList.add("youlose");
     }
 }
 
